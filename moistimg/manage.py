@@ -14,8 +14,17 @@ manager = Manager(app)
 
 
 @manager.command
+def init():
+    from app.img.helpers import check_and_make_dirs
+
+    check_and_make_dirs()
+
+
+@manager.command
 def run():
-    app.run()
+    init()
+
+    app.run(debug=True)
 
 if __name__ == "__main__":
     manager.run()
