@@ -3,6 +3,6 @@
 from . import img_blueprint
 
 
-@api_blueprint.route('/')
+@img_blueprint.route('/')
 def index():
     return ''
